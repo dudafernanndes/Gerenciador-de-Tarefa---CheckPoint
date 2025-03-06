@@ -1,5 +1,7 @@
 // Array para armazenar todas as tarefas
 let tarefas = [];
+console.log(tarefas);
+
 // Array para armazenar tarefas filtradas
 let tarefasExibidas = [];
 const formulario = document.getElementById('task-form');
@@ -78,8 +80,8 @@ function concluirTarefa(id) {
     exibirTarefas();
 }
 
-// Função para excluir tarefa
-function excluirTarefa(id) {
+// Função para deletar tarefa
+function deletarTarefa(id) {
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
    
     // Atualiza a lista exibida
@@ -104,3 +106,15 @@ document.getElementById('completed-tasks-btn').addEventListener('click', functio
     tarefasExibidas = tarefas.filter(tarefa => tarefa.concluida);
     exibirTarefas();
 });
+
+// Função para adicionar múltiplas tarefas
+function adicionarTarefas(...tarefasParam) {
+    for (let tarefa of tarefasParam) {
+        // Adiciona cada tarefa ao array 'tarefas'
+        tarefas.push(tarefa);
+    }
+   
+    // Atualiza a lista exibida
+    tarefasExibidas = tarefas;
+    exibirTarefas();
+}
