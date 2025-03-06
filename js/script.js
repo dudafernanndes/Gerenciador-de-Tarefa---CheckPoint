@@ -63,3 +63,17 @@ function criarTarefa(titulo, concluida = false) {
     tarefasExibidas = tarefas; // Atualiza a lista exibida para mostrar todas as tarefas
     return novaTarefa;
 }
+
+// Função para concluir tarefa
+function concluirTarefa(id) {
+    tarefas = tarefas.map(tarefa => {
+        if (tarefa.id === id) {
+            return { ...tarefa, concluida: true };
+        }
+        return tarefa;
+    });
+ 
+    // Atualiza a lista exibida
+    tarefasExibidas = tarefas;
+    exibirTarefas();
+}
