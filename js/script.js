@@ -1,8 +1,5 @@
 // Array para armazenar todas as tarefas
-let tarefas = [{
-    id: 1,
-    concluida: false
-}];
+let tarefas = [];
 console.log(tarefas);
 
 // Array para armazenar tarefas filtradas
