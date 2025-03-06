@@ -77,3 +77,12 @@ function concluirTarefa(id) {
     tarefasExibidas = tarefas;
     exibirTarefas();
 }
+
+// Função para excluir tarefa
+function excluirTarefa(id) {
+    tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+   
+    // Atualiza a lista exibida
+    tarefasExibidas = tarefas;
+    exibirTarefas();
+}
