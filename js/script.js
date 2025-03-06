@@ -104,3 +104,15 @@ document.getElementById('completed-tasks-btn').addEventListener('click', functio
     tarefasExibidas = tarefas.filter(tarefa => tarefa.concluida);
     exibirTarefas();
 });
+
+// Função para adicionar múltiplas tarefas
+function adicionarTarefas(...tarefasParam) {
+    for (let tarefa of tarefasParam) {
+        // Adiciona cada tarefa ao array 'tarefas'
+        tarefas.push(tarefa);
+    }
+   
+    // Atualiza a lista exibida
+    tarefasExibidas = tarefas;
+    exibirTarefas();
+}
