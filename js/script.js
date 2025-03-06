@@ -86,3 +86,21 @@ function excluirTarefa(id) {
     tarefasExibidas = tarefas;
     exibirTarefas();
 }
+
+// Função para exibir apenas tarefas pendentes
+document.getElementById('pending-tasks-btn').addEventListener('click', function() {
+    tarefasExibidas = tarefas.filter(tarefa => !tarefa.concluida);
+    exibirTarefas();
+});
+ 
+// Função para exibir todas as tarefas
+document.getElementById('all-tasks-btn').addEventListener('click', function() {
+    tarefasExibidas = tarefas; // Exibe todas as tarefas
+    exibirTarefas();
+});
+ 
+// Função para exibir apenas tarefas concluídas
+document.getElementById('completed-tasks-btn').addEventListener('click', function() {
+    tarefasExibidas = tarefas.filter(tarefa => tarefa.concluida);
+    exibirTarefas();
+});
