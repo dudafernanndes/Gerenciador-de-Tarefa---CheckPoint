@@ -1,5 +1,10 @@
 // Array para armazenar todas as tarefas
-let tarefas = [];
+let tarefas = [{
+    id: 1,
+    concluida: false
+}];
+console.log(tarefas);
+
 // Array para armazenar tarefas filtradas
 let tarefasExibidas = [];
 const formulario = document.getElementById('task-form');
@@ -78,8 +83,8 @@ function concluirTarefa(id) {
     exibirTarefas();
 }
 
-// Função para excluir tarefa
-function excluirTarefa(id) {
+// Função para deletar tarefa
+function deletarTarefa(id) {
     tarefas = tarefas.filter(tarefa => tarefa.id !== id);
    
     // Atualiza a lista exibida
